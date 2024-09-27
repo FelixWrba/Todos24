@@ -1,0 +1,25 @@
+{
+    "lang": "de",
+    "name": "Todos24",
+    "short_name": "Todos24",
+    "description": "Todos24 is a free Taskmanagent System that runs in the browser.",
+    "start_url": "/",
+    "background_color": "#000000",
+    "theme_color": "#FB8500",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/assets/icon/favicon512.png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/assets/icon/favicon200.png",
+            "sizes": "200x200"
+        },
+        {
+            "src": "/assets/icon/favicon32.png",
+            "sizes": "32x32"
+        }
+    ]
+}

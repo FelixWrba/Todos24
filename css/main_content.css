@@ -1,0 +1,43 @@
+#main_content {
+    user-select: text;
+}
+
+::selection {
+    background-color: #FB8500;
+    color: black;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+#err-spinner {
+    margin: 24px;
+    font-size: 4em;
+    animation: rotate 5s linear infinite both;
+    width: fit-content;
+}
+
+@keyframes rotate {
+    0% {
+        rotate: 0deg;
+        color: #854700;
+    }
+
+    20% {
+        color: black;
+    }
+
+    50% {
+        rotate: 180deg;
+    }
+
+    80% {
+        color: #FB8500;
+    }
+
+    100% {
+        rotate: 360deg;
+        color: #854700;
+    }
+}
