@@ -55,5 +55,7 @@ function openPage(page) {
     page = page;
     localStorage.setItem('page', page);
 }
-openPage(page);
+// openPage(page);
 //#endregion
+
+console.log('%c  _____               _                 ____    _  _   \n |_   _|   ___     __| |   ___    ___  |___ \  | || |  \n   | |    / _ \   / _` |  / _ \  / __|   __) | | || |_ \n   | |   | (_) | | (_| | | (_) | \__ \  / __/  |__   _|\n   |_|    \___/   \__,_|  \___/  |___/ |_____|    |_|   ', 'font-family: monospace');
