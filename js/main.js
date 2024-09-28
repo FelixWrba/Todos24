@@ -62,5 +62,8 @@ function openPage(page) {
 //#endregion
 
 //#region UI Handling
-
+const TODO_ADD_FORM = {
+    show: () => document.getElementById('addTodoForm').style.display = 'flex',
+    hide: () => document.getElementById('addTodoForm').style.display = 'none'
+}
 //#endregion

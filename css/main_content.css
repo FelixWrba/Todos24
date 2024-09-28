@@ -11,6 +11,7 @@ h2 {
     font-weight: 600;
 }
 
+/* Error spinner ================================================================== */
 #err-spinner {
     margin: 24px;
     font-size: 4em;
@@ -42,6 +43,7 @@ h2 {
     }
 }
 
+/* Popup style ================================================================*/
 .popup {
     position: fixed;
     top: 48px;
@@ -53,6 +55,9 @@ h2 {
     z-index: 11;
     border-radius: 8px;
     box-shadow: 4px 4px 20px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .popupTitle,
@@ -66,10 +71,111 @@ h2 {
 .popupTitle {
     font-size: 1.4em;
     font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.popup-box {
+    display: block;
+    background-color: #f1f1f1;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.popup-box input {
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup button {
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    background-color: #854700;
+    color: #fff1e1;
+    padding: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.popup .btn-gray {
+    background-color: #fff1e1;
+    color: #854700;
 }
 
 @media (max-width: 650px) {
     .popup {
         width: calc(100vw - 140px);
     }
+}
+
+#addTodoForm {
+    display: none;
+}
+
+.btn-link {
+    border: none;
+    color: #854700;
+    background-color: transparent;
+    cursor: pointer;
+    font: 1em 'Open Sans';
+}
+
+button:focus,
+input:focus {
+    outline: 2px solid blue;
+}
+
+/* Todolist ======================================================================== */
+.todo-list {
+    max-width: 600px;
+    padding: 0;
+}
+
+.todo-body {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    transition: all .3s;
+    border-radius: 8px;
+}
+
+.todo-body:hover {
+    background-color: #f1f1f1;
+}
+
+.todo-body div {
+    width: 100%;
+}
+
+.todo-checkbox {
+    accent-color: rgb(0, 228, 0);
+    width: 1.4em;
+    height: 1.4em;
+    cursor: pointer;
+}
+
+.todo-checkbox:focus {
+    border: 1px solid blue;
+    outline: none;
+}
+
+.todo-title {
+    font-size: 1.2em;
+}
+
+.todo-desc {
+    font-size: .8em;
+    color: #616161;
+}
+
+.todo-category {
+    display: block;
+    text-align: end;
+    font-style: italic;
+    width: 100%;
+    color: #854700;
+    font-size: .8em;
 }

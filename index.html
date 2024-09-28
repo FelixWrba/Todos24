@@ -107,9 +107,31 @@
         <!-- The actual main dashboard -->
         <section id="main_content">
             <h2>Heute</h2>
-            <form action="javascript:alert(1);" class="popup" id="addTodoForm">
-                <input type="text" class="popupTitle" placeholder="Todoname">
-                <input type="text" class="popupDesc" placeholder="Beschreibung">
+            <button class="btn-link" onclick="TODO_ADD_FORM.show()">+ Todo hinzufügen</button>
+            <ul class="todo-list">
+                <li class="todo-body">
+                    <input type="checkbox" class="todo-checkbox">
+                    <div>
+                        <h3 class="todo-title">Todo-Name</h3>
+                        <p class="todo-desc"> Eine genaue Beschreibung des To-Dos.</p>
+                        <span class="todo-category">#Schule</span>
+                    </div>
+                </li>
+            </ul>
+            
+            <form action="javascript:alert(1);" class="popup" id="addTodoForm" autocomplete="off">
+                <input type="text" id="addTodoTitle" class="popupTitle" placeholder="Todoname" required>
+                <input type="text" id="addTodoDesc" class="popupDesc" placeholder="Beschreibung">
+                <span class="popup-box">
+                    <label for="addTodoDueDate">Fälligkeitsdatum: </label>
+                    <input type="date" id="addTodoDueDate" required>
+                </span>
+                <span class="popup-box">
+                    <label for="addTodoRemindDate">Erinnerungsdatum: </label>
+                    <input type="date" id="addTodoRemindDate">
+                </span>
+                <button type="submit">Todo hinzufügen</button>
+                <button class="btn-gray" type="button" onclick="TODO_ADD_FORM.hide()">Cancel</button>
             </form>
         </section>
     </main>
