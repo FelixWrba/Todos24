@@ -84,6 +84,7 @@ nav {
     z-index: 10;
     transition: all .5s;
     opacity: 1;
+    overflow: hidden;
 }
 
 #sidebar {
@@ -119,7 +120,6 @@ header {
 
 #sidebar-extend {
     display: none;
-    background-color: #fff1e1;
     padding: 12px;
 }
 
@@ -153,5 +153,6 @@ header {
         position: fixed;
         top: 0;
         height: 100vh;
+        max-width: 75%;
     }
 }

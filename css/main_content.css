@@ -41,3 +41,35 @@ h2 {
         color: #854700;
     }
 }
+
+.popup {
+    position: fixed;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    padding: 24px;
+    background-color: white;
+    z-index: 11;
+    border-radius: 8px;
+    box-shadow: 4px 4px 20px 4px rgba(0, 0, 0, 0.3);
+}
+
+.popupTitle,
+.popupDesc {
+    border: none;
+    outline: none;
+    width: 100%;
+    font: 1em "Open Sans";
+}
+
+.popupTitle {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+@media (max-width: 650px) {
+    .popup {
+        width: calc(100vw - 140px);
+    }
+}

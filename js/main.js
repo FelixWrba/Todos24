@@ -49,13 +49,18 @@ const PAGES = {
 }
 
 function openPage(page) {
-    if(!PAGES[page]) page = 'err';
+    if (!PAGES[page]) page = 'err';
     mainContent.innerHTML = PAGES[page].ht;
     pageTitle.innerHTML = `Todos24 - ${PAGES[page].title}`;
     page = page;
     localStorage.setItem('page', page);
+    if (window.innerWidth < 600) {
+        nav.hide();
+    }
 }
 // openPage(page);
 //#endregion
 
-console.log('%c  _____               _                 ____    _  _   \n |_   _|   ___     __| |   ___    ___  |___ \  | || |  \n   | |    / _ \   / _` |  / _ \  / __|   __) | | || |_ \n   | |   | (_) | | (_| | | (_) | \__ \  / __/  |__   _|\n   |_|    \___/   \__,_|  \___/  |___/ |_____|    |_|   ', 'font-family: monospace');
+//#region UI Handling
+
+//#endregion

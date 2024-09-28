@@ -28,8 +28,12 @@
 
 <body>
     <!-- Check if site allows javscript -->
-    <noscript>This App uses Javascript. Please ensure that your browser supports javascript and this website is allowed
-        to use it.</noscript>
+    <noscript>
+        <h2>No Javascript</h2>
+        <p>This App uses Javascript. Please ensure that your browser supports javascript and this website is allowed
+            to use it.</p>
+        <div id="err-spinner">)-:</div>
+    </noscript>
 
     <!-- Main html wrapper -->
     <main>
@@ -103,7 +107,10 @@
         <!-- The actual main dashboard -->
         <section id="main_content">
             <h2>Heute</h2>
-            
+            <form action="javascript:alert(1);" class="popup" id="addTodoForm">
+                <input type="text" class="popupTitle" placeholder="Todoname">
+                <input type="text" class="popupDesc" placeholder="Beschreibung">
+            </form>
         </section>
     </main>
 
