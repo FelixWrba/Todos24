@@ -108,7 +108,7 @@
         <section id="main_content">
             <h2>Heute</h2>
             <button class="btn-link" onclick="TODO_ADD_FORM.show()">+ Todo hinzufügen</button>
-            <ul class="todo-list">
+            <ul id="todo-list">
                 <li class="todo-body">
                     <input type="checkbox" class="todo-checkbox">
                     <div>
@@ -142,8 +142,15 @@
                 </span>
                 <span class="popup-box">
                     <label for="addTodoRemindDate">Erinnerungsdatum: </label>
-                    <input type="date" id="addTodoRemindDate">
+                    <input type="time" id="addTodoRemindDate">
                 </span>
+                <span class="popup-box">
+                    <label for="addTodoCategory">Kategorie: </label>
+                    <input type="text" id="addTodoCategory" list="addTodoCategoryList">
+                </span>
+                <datalist id="addTodoCategoryList">
+                    <option value="main"></option>
+                </datalist>
                 <button type="submit">Todo hinzufügen</button>
                 <button class="btn-gray" type="button" onclick="TODO_ADD_FORM.hide()">Abbrechen</button>
             </form>
@@ -161,17 +168,18 @@
                 <button type="submit">Todo bearbeiten</button>
                 <button class="btn-gray" type="button" onclick="TODO_EDIT_FORM.hide()">Abbrechen</button>
             </form>
-            <form action="javascript:" onsubmit="CRUD.delete()" class="popup" id="deleteTodoForm" autocomplete="off">
-                <h2 class="popupTitle">Bestätige das Löschen von {TodoName}</h2>
+            <form action="javascript:" onsubmit="CRUD.deleteTodo(0)" class="popup" id="deleteTodoForm" autocomplete="off">
+                <h2 class="popupTitle">Bestätige das Löschen von <span id="deleteTodoTitle">{TodoName}</span></h2>
                 <button type="submit">Todo löschen</button>
                 <button class="btn-gray" type="button" onclick="TODO_DELETE_FORM.hide()">Abbrechen</button>
             </form>
             <form action="javascript:" onsubmit="TODO_READ_FORM.hide();" class="popup" id="readTodoForm" autocomplete="off">
-                <h2 class="popupTitle">{TodoName}</h2>
-                <p class="popupDesc">{TodoDescription}</p>
-                <span class="popup-box">Fälligkeitsdatum: 9-29-2024</span>
-                <span class="popup-box">Erinnerungsdatum: 9:00 9-30-2024</span>
-                <button type="" class="btn-gray" type="button">Schließen</button>
+                <h2 class="popupTitle" id="readTodoTitle">{TodoName}</h2>
+                <p class="popupDesc" id="readTodoDesc">{TodoDescription}</p>
+                <span class="popup-box" id="readTodoDueDate">Fälligkeitsdatum: 9-29-2024</span>
+                <span class="popup-box" id="readTodoRemind">Erinnerungsdatum: 9:00 9-30-2024</span>
+                <span class="popup-box" id="readTodoCategory">Kategorie: main</span>
+                <button class="btn-gray" type="submit">Schließen</button>
             </form>
         </section>
     </main>

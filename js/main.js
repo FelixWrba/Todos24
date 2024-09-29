@@ -71,11 +71,26 @@ const TODO_EDIT_FORM = {
     hide: () => document.getElementById('editTodoForm').style.display = 'none'
 }
 const TODO_DELETE_FORM = {
-    show: () => document.getElementById('deleteTodoForm').style.display = 'flex',
+    show: (idNum) => {
+        let j = todos.findIndex(e => e.id == idNum);
+        if (j < 0) return -1;
+        document.getElementById('deleteTodoForm').onsubmit = () => CRUD.deleteTodo(idNum);
+        document.getElementById('deleteTodoTitle').innerHTML = todos[j].name;
+        document.getElementById('deleteTodoForm').style.display = 'flex';
+    },
     hide: () => document.getElementById('deleteTodoForm').style.display = 'none'
 }
 const TODO_READ_FORM = {
-    show: () => document.getElementById('readTodoForm').style.display = 'flex',
+    show: (idNum) => {
+        let j = todos.findIndex(e => e.id == idNum);
+        if (j < 0) return -1;
+        document.getElementById('readTodoForm').style.display = 'flex';
+        document.getElementById('readTodoTitle').innerHTML = todos[j].name;
+        document.getElementById('readTodoDesc').innerHTML = ((todos[j].description == '') ? '<i>Keine Beschreibung</i>' : todos[j].description);
+        document.getElementById('readTodoDueDate').innerHTML = 'Fälligkeitsdatum: ' + todos[j].dueDate;
+        document.getElementById('readTodoRemind').innerHTML = 'Erinnerungsuhrzeit: ' + ((todos[j].remindDate == '') ? '<i>Keine Erinnerung</i>' : todos[j].remindDate);
+        document.getElementById('readTodoCategory').innerHTML = 'Kategorie: ' + ((todos[j].category == '') ? 'main' : todos[j].category);
+    },
     hide: () => document.getElementById('readTodoForm').style.display = 'none'
 }
 //#endregion

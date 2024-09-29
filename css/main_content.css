@@ -129,7 +129,7 @@ input:focus {
 }
 
 /* Todolist ======================================================================== */
-.todo-list {
+#todo-list {
     max-width: 600px;
     padding: 0;
 }
