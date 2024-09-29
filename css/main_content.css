@@ -111,7 +111,7 @@ h2 {
     }
 }
 
-#addTodoForm {
+#addTodoForm, #editTodoForm, #deleteTodoForm, #readTodoForm {
     display: none;
 }
 
@@ -137,9 +137,11 @@ input:focus {
 .todo-body {
     display: flex;
     align-items: center;
+    gap: 8px;
     padding: 12px;
     transition: all .3s;
     border-radius: 8px;
+    border-bottom: 2px solid #f1f1f1;
 }
 
 .todo-body:hover {
@@ -163,7 +165,29 @@ input:focus {
 }
 
 .todo-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-title div {
+    width: fit-content;
+    display: flex;
+    gap: 4px;
+}
+
+.todo-title svg {
+    fill: #616161;
+    cursor: pointer;
+}
+
+.todo-title span {
     font-size: 1.2em;
+    cursor: pointer;
+}
+
+.todo-title span:hover {
+    text-decoration: underline;
 }
 
 .todo-desc {

@@ -22,6 +22,6 @@ class Todo {
 // create, read, update, delete
 const CRUD = {
     addTodo: () => { console.log('Todo added'); },
-    editTodo: () => { console.log('Todo added'); },
+    editTodo: () => { console.log('Todo edited'); },
     completeTodo: () => { console.log('Todo completed'); }
 }

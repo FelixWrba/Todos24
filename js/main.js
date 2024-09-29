@@ -66,4 +66,16 @@ const TODO_ADD_FORM = {
     show: () => document.getElementById('addTodoForm').style.display = 'flex',
     hide: () => document.getElementById('addTodoForm').style.display = 'none'
 }
+const TODO_EDIT_FORM = {
+    show: () => document.getElementById('editTodoForm').style.display = 'flex',
+    hide: () => document.getElementById('editTodoForm').style.display = 'none'
+}
+const TODO_DELETE_FORM = {
+    show: () => document.getElementById('deleteTodoForm').style.display = 'flex',
+    hide: () => document.getElementById('deleteTodoForm').style.display = 'none'
+}
+const TODO_READ_FORM = {
+    show: () => document.getElementById('readTodoForm').style.display = 'flex',
+    hide: () => document.getElementById('readTodoForm').style.display = 'none'
+}
 //#endregion
