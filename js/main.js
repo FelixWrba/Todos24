@@ -67,7 +67,20 @@ const TODO_ADD_FORM = {
     hide: () => document.getElementById('addTodoForm').style.display = 'none'
 }
 const TODO_EDIT_FORM = {
-    show: () => document.getElementById('editTodoForm').style.display = 'flex',
+    show: (idNum) => {
+        let j = todos.findIndex(e => e.id == idNum);
+        if (j < 0) return -1;
+        document.getElementById('editTodoForm').onsubmit = () => CRUD.editTodo(idNum);
+        let title = document.getElementById('editTodoTitle');
+        title.value = todos[j].name;
+        document.getElementById('editTodoDesc').value = ((todos[j].description == '') ? '' : todos[j].description);
+        document.getElementById('editTodoDueDate').value = todos[j].dueDate;
+        document.getElementById('editTodoRemindDate').value = ((todos[j].remindDate == '') ? '' : todos[j].remindDate);
+        document.getElementById('editTodoCategory').value = ((todos[j].category == '') ? 'main' : todos[j].category);
+        document.getElementById('editTodoForm').style.display = 'flex';
+        title.focus();
+        title.select();
+    },
     hide: () => document.getElementById('editTodoForm').style.display = 'none'
 }
 const TODO_DELETE_FORM = {

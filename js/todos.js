@@ -35,8 +35,29 @@ const CRUD = {
         [a.value, b.value, c.value, d.value, e.value] = ['', '', '', '', ''];
         save();
     },
-    editTodo: () => { console.log('Todo edited'); },
-    completeTodo: () => { console.log('Todo completed'); },
+    editTodo: (idNum) => {
+        let j = todos.findIndex(e => e.id == idNum);
+        if (j < 0) return -1;
+        let a = document.getElementById('editTodoTitle');
+        let b = document.getElementById('editTodoDesc');
+        let c = document.getElementById('editTodoRemindDate');
+        let d = document.getElementById('editTodoDueDate');
+        let e = document.getElementById('editTodoCategory');
+        todos[j].name = a.value;
+        todos[j].description = b.value;
+        todos[j].remindDate = c.value;
+        todos[j].dueDate = d.value;
+        todos[j].category = e.value;
+        TODO_EDIT_FORM.hide();
+        save();
+        render();
+    },
+    completeTodo: (idNum) => {
+        let j = todos.findIndex(e => e.id == idNum);
+        if (j < 0) return -1;
+        todos[j].done = document.getElementById(idNum + '-check').checked;
+        save();
+    },
     deleteTodo: (idNum) => {
         let j = todos.findIndex(e => e.id == idNum);
         if (j < 0) return -1;
@@ -65,7 +86,7 @@ function createTodoHTML(idNum) {
     let j = todos.findIndex(e => e.id == idNum);
     if (j < 0) return -1;
     return `<li class="todo-body" id="${idNum}">
-                    <input type="checkbox" class="todo-checkbox">
+                    <input type="checkbox" id="${idNum}-check" class="todo-checkbox" onclick="CRUD.completeTodo(${idNum})" ${(todos[j].done) ? 'checked' : ''}>
                     <div>
                         <h3 class="todo-title">
                             <span onclick="TODO_READ_FORM.show(${idNum})">${todos[j].name}</span>
