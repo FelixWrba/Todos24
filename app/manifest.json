@@ -17,5 +17,21 @@
             "src": "/assets/icon/favicon192.png",
             "sizes": "192x192"
         }
+    ],
+    "screenshots": [
+        {
+            "src": "../assets/img/Desktop.png",
+            "sizes": "1920x1080",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Screenshot Wide"
+        },
+        {
+            "src": "../assets/img/Mobile.png",
+            "sizes": "1290x2796",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Screenshot Narrow"
+        }
     ]
 }
